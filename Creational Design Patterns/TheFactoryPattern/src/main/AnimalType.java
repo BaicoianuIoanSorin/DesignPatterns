@@ -1,6 +1,6 @@
 package main;
 
-public enum AnimalTypes {
+public enum AnimalType {
     DOG,
     CAT
 }

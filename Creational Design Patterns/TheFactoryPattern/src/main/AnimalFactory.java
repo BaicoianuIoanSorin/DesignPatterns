@@ -4,7 +4,9 @@ import products.Animal;
 import products.Cat;
 import products.Dog;
 
-public class PetStoreFactory implements AnimalFactory {
+public class AnimalFactory implements IAnimalFactory {
+
+    private static AnimalFactory instance;
 
     @Override
     public Animal createAnimal(String name, AnimalType animalType) {
@@ -17,5 +19,12 @@ public class PetStoreFactory implements AnimalFactory {
             }
             default -> throw new IllegalArgumentException("This type of animal doesn't exist.");
         }
+    }
+
+    public static AnimalFactory getInstance() {
+        if(instance == null) {
+            instance = new AnimalFactory();
+        }
+        return instance;
     }
 }

@@ -2,6 +2,6 @@ package main;
 
 import products.Animal;
 
-public interface AnimalFactory {
+public interface IAnimalFactory {
     public Animal createAnimal(String name, AnimalType animalType);
 }
